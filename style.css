@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.app {
+  width: 380px;
+  background: #1e1e2f;
+  border-radius: 20px;
+  padding: 20px;
+  color: white;
+  box-shadow: 0 0 20px black;
+}
+
+.header {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+input, select {
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+button {
+  margin-top: 10px;
+  padding: 12px;
+  background: #ff6a00;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ff8500;
+}
+
+.ticket-box {
+  margin-top: 15px;
+  padding: 15px;
+  background: #2c2c3e;
+  border-radius: 15px;
+  display: none;
+}
+
+.ticket-box p {
+  margin: 5px 0;
+}

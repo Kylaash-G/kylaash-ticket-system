@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kylaash's Online Ticket Booking System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <div class="header">
+    🚌 Kylaash's Ticket Booking
+  </div>
+
+  <div class="form">
+    <input type="text" id="name" placeholder="Enter your name">
+
+    <select id="source"></select>
+    <select id="destination"></select>
+
+    <button onclick="bookTicket()">Book Ticket</button>
+  </div>
+
+  <div id="ticket" class="ticket-box"></div>
+
+</div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
