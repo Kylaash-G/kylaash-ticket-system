@@ -2,32 +2,98 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Kylaash's Online Ticket Booking System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A simple online bus ticket booking demo.">
+  <title>Kylaash | Bus Ticket Booking</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <main class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Kylaash Ticket Booking home">
+        <span class="brand-icon" aria-hidden="true">🚌</span>
+        <span><strong>Kylaash</strong><small>BUS TICKET BOOKING</small></span>
+      </a>
+      <span class="demo-label">Booking demo</span>
+    </header>
 
-<div class="app">
+    <section class="hero">
+      <p class="eyebrow">TRAVEL MADE SIMPLE</p>
+      <h1>Your next journey<br><span>starts here.</span></h1>
+      <p class="hero-copy">Choose your route, pick a travel date and keep your ticket details in one place.</p>
+    </section>
 
-  <div class="header">
-    🚌 Kylaash's Ticket Booking
-  </div>
+    <section class="booking-card" aria-labelledby="booking-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">PLAN YOUR TRIP</p>
+          <h2 id="booking-title">Book your bus ticket</h2>
+        </div>
+        <span class="step-pill">01 <span> / BOOKING</span></span>
+      </div>
 
-  <div class="form">
-    <input type="text" id="name" placeholder="Enter your name">
+      <form id="booking-form">
+        <div class="field-grid">
+          <label class="field field-wide" for="name">
+            <span>Passenger name</span>
+            <input id="name" name="name" type="text" placeholder="Enter passenger name" maxlength="60" autocomplete="name" required>
+          </label>
+          <label class="field" for="source">
+            <span>From</span>
+            <select id="source" name="source" required>
+              <option value="">Choose departure city</option>
+            </select>
+          </label>
+          <label class="field" for="destination">
+            <span>To</span>
+            <select id="destination" name="destination" required>
+              <option value="">Choose destination city</option>
+            </select>
+          </label>
+          <label class="field" for="travel-date">
+            <span>Journey date</span>
+            <input id="travel-date" name="travelDate" type="date" required>
+          </label>
+        </div>
+        <div id="route-message" class="route-message" aria-live="polite">Select your departure and destination cities to check the route.</div>
+        <button class="primary-button" type="submit">Confirm booking <span aria-hidden="true">→</span></button>
+        <p class="fine-print">Demo only: bookings are saved in this browser. No payment is collected.</p>
+      </form>
+    </section>
 
-    <select id="source"></select>
-    <select id="destination"></select>
+    <section id="ticket-section" class="ticket-card" hidden aria-live="polite">
+      <div class="ticket-top">
+        <div><p class="eyebrow">BOOKING CONFIRMED</p><h2>Your ticket</h2></div>
+        <span class="confirmed-badge">✓ Confirmed</span>
+      </div>
+      <div id="ticket-details" class="ticket-details"></div>
+      <div class="ticket-actions">
+        <button id="print-ticket" class="secondary-button" type="button">Print ticket</button>
+        <button id="new-booking" class="text-button" type="button">Book another trip</button>
+      </div>
+    </section>
 
-    <button onclick="bookTicket()">Book Ticket</button>
-  </div>
+    <section class="lookup-card" aria-labelledby="lookup-title">
+      <div>
+        <p class="eyebrow">ALREADY BOOKED?</p>
+        <h2 id="lookup-title">Find your ticket</h2>
+        <p>Enter the ticket ID saved when you booked.</p>
+      </div>
+      <form id="lookup-form" class="lookup-form">
+        <label class="sr-only" for="ticket-id">Ticket ID</label>
+        <input id="ticket-id" type="text" placeholder="e.g. TKT-ABC123" autocomplete="off" required>
+        <button class="secondary-button" type="submit">Find ticket</button>
+      </form>
+      <p id="lookup-message" class="lookup-message" role="status"></p>
+    </section>
 
-  <div id="ticket" class="ticket-box"></div>
+    <footer>
+      <span>© <span id="year"></span> Kylaash Ticket Booking</span>
+      <span>Simple journeys begin here.</span>
+    </footer>
+  </main>
 
-</div>
-
-<script src="data.js"></script>
-<script src="script.js"></script>
-
+  <script src="data.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
